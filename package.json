@@ -4,7 +4,10 @@
   "description": "A backend server for mmgithubers frontend site",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "clean": "rm -rf build && mkdir build",
+    "build": "babel src -d build",
+    "start": "npm run clean && npm run build && node build/index.js",
+    "dev": "nodemon src/index.js --exec babel-node --presets es2015",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "dreamingblackcat",
@@ -12,9 +15,13 @@
   "dependencies": {
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
-    "mongodb": "^2.1.19"
+    "mongodb": "^2.1.19",
+    "mongodb-es6": "^1.0.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-2": "^6.5.0",
     "nodemon": "^1.9.2"
   }
 }
