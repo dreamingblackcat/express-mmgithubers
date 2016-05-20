@@ -4,6 +4,7 @@
   "description": "A backend server for mmgithubers frontend site",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "dreamingblackcat",
@@ -12,5 +13,8 @@
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "mongodb": "^2.1.19"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.2"
   }
 }
